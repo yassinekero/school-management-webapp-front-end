@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department List</title>
+    
+</head>
+<body>
+
+<h2>Department List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Responsibility</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let department of departments">
+            <td>{{ department.id_dept }}</td>
+            <td>{{ department.dept_name }}</td>
+            <td>{{ department.dept_respo }}</td>
+            <td class="action-buttons">
+                <button class="modify-button" (click)="modifyDepartment()">Modifier</button>
+                <button class="delete-button" (click)="deleteDepartment(department.id_dept)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

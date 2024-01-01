@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Department</title>
+
+</head>
+<body>
+
+<h2>Créer Departement</h2>
+
+<form>
+    <label for="departementName">Department Name:</label>
+    <input type="text" id="departementName"[(ngModel)]="departementName" name="departementName" required>
+
+    <label for="departementHead">Choose Department Head:</label>
+    <select id="departementHead" name="departementHead" [(ngModel)]="selectedEnseignant" required>
+        <option *ngFor="let enseignant of enseignants" [value]="enseignant">{{ enseignant.prenomEnseignant + " " + enseignant.nomEnseignant }}</option>
+    </select>
+
+    <button (click)="createDepartement()">Create Department</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Filiere</title>
+</head>
+<body>
+
+<h2>Create Filiere</h2>
+
+<form>
+    <label for="filiereName">Filiere Name:</label>
+    <input type="text" id="filiereName" [(ngModel)]="filiereName" name="filiereName" required>
+    <label for="filiereDept">Departement:</label>
+    <select id="filiereDept" name="filiereDept" [(ngModel)]="selectedDept" required>
+        <option *ngFor="let department of departments" [value]="department.id_dept">{{ department.dept_name}}</option>
+    </select>
+    <label for="filiereHead">Choose Filiere Head:</label>
+    <select id="filiereHead" name="filiereHead" [(ngModel)]="selectedEnseignant" required>
+        <option *ngFor="let enseignant of enseignants" [value]="enseignant.id_enseignant">{{ enseignant.prenomEnseignant + " " + enseignant.nomEnseignant }}</option>
+    </select>
+
+    <button (click)="createFiliere()">Create Filiere</button>
+</form>
+
+</body>
+</html>
